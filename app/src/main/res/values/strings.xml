@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Note</string>
+    <string name="title_edit">Title</string>
+    <string name="description_edit">Description</string>
+    <string name="save_me_edit">save me</string>
+    <string name="searchview_menu">SearchView</string>
+    <string name="delete_menu">Delete</string>
+    <string name="select_all_menu">select all</string>
+</resources>
