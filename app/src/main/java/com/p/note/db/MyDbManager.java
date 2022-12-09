@@ -41,7 +41,6 @@ public class MyDbManager {
 
         List<NoteItem> tempList = new ArrayList<>();
         String selection = MyConstants.TITLE + " like ?";
-        //есть функции которие помагает пулачать елементи
         @SuppressLint("Recycle") Cursor cursor = db.query(MyConstants.TABLE_NAME,null,selection,new String[]{"%" + searchText + "%"},null,null,null);
         while (cursor.moveToNext()){
 
@@ -63,7 +62,6 @@ public class MyDbManager {
     public List<NoteItem> getFromDb(){
 
         List<NoteItem> tempList = new ArrayList<>();
-        //есть функции которие помагает пулачать елементи
         @SuppressLint("Recycle") Cursor cursor = db.query(MyConstants.TABLE_NAME,null,null,null,null,null,null);
         while (cursor.moveToNext()){
 
@@ -106,29 +104,6 @@ public class MyDbManager {
         onDataReceived.onReceived(tempList);
 
     }
-
-//    public void getFromDb(String searchText){
-//        final List<NoteItem> tempList = new ArrayList<>();
-//        String selection = MyConstants.TITLE + " like ?";
-//        final Cursor cursor = db.query(MyConstants.TABLE_NAME,null,selection,
-//                new String[]{"%" + searchText},null,null,null);
-//        while (cursor.moveToNext()){
-//            NoteItem item = new NoteItem();
-//            @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex(MyConstants.TITLE));
-//            @SuppressLint("Range") String desc = cursor.getString(cursor.getColumnIndex(MyConstants.DISC));
-//            @SuppressLint("Range") String uri = cursor.getString(cursor.getColumnIndex(MyConstants.URI));
-//            @SuppressLint("Range") int _id = cursor.getInt(cursor.getColumnIndex(MyConstants._ID));
-//            item.setTitle(title);
-//            item.setDesc(desc);
-//            item.setUri(uri);
-//            item.setId(_id);
-//
-//            tempList.add(item);
-//
-//        }
-//        cursor.close();
-//
-//    }
 
     public void updateItem(String title, String disc, String uri,int id){
         String selection = MyConstants._ID + "=" + id;
